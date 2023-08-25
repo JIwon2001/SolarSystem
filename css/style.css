@@ -1,3 +1,7 @@
+@charset 'urf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap');
+
+
 * {
   margin: 0px;
   padding: 0px;
@@ -55,6 +59,7 @@ section article {
   width: 100%;
   height: 100%;
   position: absolute;
+  cursor: pointer;
 }
 
 section article.태양 {
@@ -177,27 +182,81 @@ section article.해왕성 img {
 main aside {
   width: 1200px;
   height: 600px;
-  background: #ffb5b5;
   position: absolute;
   top: 50%;
-  left: -100%; /*화면 바깥쪽에 위치*/
+  left: -100%;
   opacity: 0;
   box-sizing: border-box;
   display: flex;
   transition: 1s;
+  background: rgba(0, 12, 30, 0.8);
+  border-radius: 50px;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #222;
 }
 
 main aside img {
+  opacity: 1; /* 이미지 불투명도를 초기에 1로 설정 */
   width: 50%;
 }
 
+main aside .txt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  opacity: 1; /* 텍스트 불투명도를 초기에 1로 설정 */
+  color: #fff;
+  font-family: 'Noto Serif KR', serif;
+}
+
+
+main aside .txt h1 {
+  display: block;
+}
+
+main aside .txt p{
+  text-align: left;
+  font-size: 20px;
+}
+
 main aside span {
+  position: absolute;
   cursor: pointer;
+  right: 30px;
+  top: 20px;
+  opacity: 1;
 }
 
 main aside.on {
-  opacity: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1; /* <aside>가 활성화되면 전체 요소의 불투명도를 1로 설정 */
+}
+
+main aside.on img {
+  opacity: 1;
+}
+
+main aside.on .txt {
+  opacity: 1;
+}
+
+
+main aside span.close-button {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  cursor: pointer;
+  right: 30px;
+  top: 20px;
+  opacity: 1; /* 초기 불투명도를 1로 설정 */
+}
+
+main aside.on span.close-button {
+  opacity: 1; /* <aside>가 활성화되었을 때 불투명도 조절 */
 }
